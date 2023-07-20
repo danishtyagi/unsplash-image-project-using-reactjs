@@ -9,7 +9,7 @@ import "lightgallery/css/lg-thumbnail.css";
 import lgThumbnail from "lightgallery/plugins/thumbnail";
 import lgZoom from "lightgallery/plugins/zoom";
 
-const url = `https://api.unsplash.com/search/photos?per_page=11&client_id=${
+const url = `https://api.unsplash.com/search/photos?per_page=20&client_id=${
   import.meta.env.VITE_API_KEY
 }`;
 const Gallery = () => {

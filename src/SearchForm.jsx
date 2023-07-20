@@ -20,7 +20,7 @@ const SearchForm = () => {
           type="text"
           className="form-input search-input"
           name="search"
-          placeholder="game"
+          placeholder="Search"
         />
         <button type="submit" className="btn">
           Search
