@@ -388,3 +388,46 @@ Gallery
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
+.gallery{
+  margin-top: 10px;
+  -webkit-column-count: 3;
+  -moz-column-break-after: 3;
+  column-count: 3;
+  -webkit-column-width: 33%;
+  -moz-column-width:33%;
+  column-width: 33%;
+  padding:2px 12px;
+}
+
+.gallery .pics{
+  margin-top:10px;
+  -webkit-transition: all 350ms ease;
+  transition: all 350ms ease;
+  cursor:pointer;
+  margin-bottom:12px
+}
+.gallery .pics:hover {
+  filter:opacity(.8);
+}
+@media (max-width: 991px){
+  .gallery {
+    margin-top: 10px;
+      -webkit-column-count: 2;
+      -moz-column-break-after: 2;
+      column-count: 2;
+     
+    }
+}
+@media (max-width: 480px) {
+.gallery {
+    margin-top: 10px;
+    -webkit-column-count: 1;
+    -moz-column-break-after: 1;
+    column-count: 1;
+    -webkit-column-width: 100%;
+    -moz-column-width: 100%;
+    column-width: 100%;
+  
+  }
+}

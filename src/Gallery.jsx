@@ -2,8 +2,14 @@ import React from "react";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { useGlobalContext } from "./context";
+import LightGallery from "lightgallery/react/Lightgallery.es5";
+import "lightgallery/css/lightgallery.css";
+import "lightgallery/css/lg-zoom.css";
+import "lightgallery/css/lg-thumbnail.css";
+import lgThumbnail from "lightgallery/plugins/thumbnail";
+import lgZoom from "lightgallery/plugins/zoom";
 
-const url = `https://api.unsplash.com/search/photos?client_id=${
+const url = `https://api.unsplash.com/search/photos?per_page=11&client_id=${
   import.meta.env.VITE_API_KEY
 }`;
 const Gallery = () => {
@@ -41,16 +47,22 @@ const Gallery = () => {
   }
 
   return (
-    <section className="image-container">
+    <section className="gallery">
       {results.map((item) => {
         const url = item?.urls?.regular;
         return (
-          <img
-            src={url}
-            key={item.id}
-            alt={item.alt_description}
-            className="img"
-          ></img>
+          <div className="pics" key={item.id}>
+            <LightGallery speed={500} plugins={[lgZoom]}>
+              <a href={url} key={item.id}>
+                <img
+                  src={url}
+                  key={item.id}
+                  alt={item.alt_description}
+                  style={{ width: "100%" }}
+                ></img>
+              </a>
+            </LightGallery>
+          </div>
         );
       })}
     </section>
