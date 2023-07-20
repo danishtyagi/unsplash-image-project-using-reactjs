@@ -4,9 +4,6 @@ import axios from "axios";
 import { useGlobalContext } from "./context";
 import LightGallery from "lightgallery/react/Lightgallery.es5";
 import "lightgallery/css/lightgallery.css";
-import "lightgallery/css/lg-zoom.css";
-import "lightgallery/css/lg-thumbnail.css";
-import lgZoom from "lightgallery/plugins/zoom";
 
 const url = `https://api.unsplash.com/search/photos?per_page=30&client_id=${
   import.meta.env.VITE_API_KEY
