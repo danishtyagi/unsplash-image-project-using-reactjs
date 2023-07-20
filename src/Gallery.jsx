@@ -50,8 +50,8 @@ const Gallery = () => {
       {results.map((item) => {
         const url = item?.urls?.regular;
         return (
-          <div className="pics" key={item.id}>
-            <LightGallery speed={500} plugins={[lgZoom]}>
+          <div className="pics">
+            <LightGallery speed={500} plugins={[]}>
               <a href={url} key={item.id}>
                 <img
                   src={url}
