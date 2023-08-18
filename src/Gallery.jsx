@@ -4,6 +4,9 @@ import axios from "axios";
 import { useGlobalContext } from "./context";
 import LightGallery from "lightgallery/react/Lightgallery.es5";
 import "lightgallery/css/lightgallery.css";
+import "lightgallery/css/lg-zoom.css";
+import "lightgallery/css/lg-thumbnail.css";
+import lgZoom from "lightgallery/plugins/zoom";
 
 const url = `https://api.unsplash.com/search/photos?per_page=30&client_id=${
   import.meta.env.VITE_API_KEY
@@ -47,8 +50,8 @@ const Gallery = () => {
       {results.map((item) => {
         const url = item?.urls?.regular;
         return (
-          <div className="pics">
-            <LightGallery speed={500} plugins={[]}>
+          <div className="pics" key={item.id}>
+            <LightGallery speed={500} plugins={[lgZoom]}>
               <a href={url} key={item.id}>
                 <img
                   src={url}
